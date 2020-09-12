@@ -5,6 +5,7 @@ import java.util.Scanner;
 public class checkInput {
 
     public static int getNumber(int max) {
+
         Scanner scanner = new Scanner(System.in);
 
         int id;

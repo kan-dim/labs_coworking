@@ -1,15 +1,13 @@
 package excursion;
 
-import client.Client;
-
 import java.util.ArrayList;
 
 public class ExcursionService {
+
     private static final ArrayList<Excursion> excursionsList = new ArrayList<>();
 
     public static void addExcursion(Excursion excursion) {
         excursionsList.add(excursion);
-//        System.out.println("Экскурсия добавлена в базу");
     }
 
     public static void removeExcursionById(int id) {

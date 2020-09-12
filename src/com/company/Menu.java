@@ -2,19 +2,24 @@ package com.company;
 
 import client.Client;
 import client.ClientService;
+
 import excursion.Excursion;
 import excursion.ExcursionService;
-import group.Group;
+
 import group.GroupService;
+
 import guide.Guide;
 import guide.GuideService;
+
 import manager.Manager;
 import manager.ManagerService;
+
 import service.Room;
 import service.checkInput;
 
 public class Menu {
     public static int printMenu() {
+
         System.out.println("*-*-*-*-*-*-*-*-*-*-*-*-");
 
         System.out.println("1. Информация о компании");

@@ -1,8 +1,5 @@
 package client;
 
-import client.Client;
-import client.ClientType;
-
 import java.util.ArrayList;
 
 public class ClientService {
@@ -20,6 +17,7 @@ public class ClientService {
         return clientsList.get(id);
     }
 
+    public static int getAmount() { return clientsList.size(); }
 
     public static Client getClientByName(String name) {
         for (Client client : clientsList) {
@@ -31,11 +29,8 @@ public class ClientService {
         return null;
     }
 
-    public static int getAmount() {
-        return clientsList.size();
-    }
-
     public static void printAllClients() {
+
         if (clientsList.size() == 0) {
             System.out.println("\nСписок клиентов пуст");
             return;
@@ -45,5 +40,4 @@ public class ClientService {
             System.out.println("Номер клиента - " + i + ". " + clientsList.get(i));
         }
     }
-
 }

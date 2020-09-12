@@ -63,5 +63,4 @@ public final class Client {
         return ("\n\tИмя клиента: " + name + "\n\tТип: " + clientType +
                 "\n\tЯзык: " + language + "\n\tID: " + id + "\n");
     }
-
 }

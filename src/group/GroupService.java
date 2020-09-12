@@ -7,10 +7,9 @@ import manager.ManagerService;
 import service.checkInput;
 
 import java.util.ArrayList;
-import java.util.Scanner;
-import java.util.concurrent.ExecutorService;
 
 public class GroupService {
+
     private static final ArrayList<Group> groupsList = new ArrayList<>();
 
     public static void addGroup(Group group) {
@@ -24,13 +23,13 @@ public class GroupService {
             return;
         }
 
-        for (int i = 0; i < groupsList.size(); i++) {
-            System.out.println(groupsList.get(i));
+        for (Group group : groupsList) {
+            System.out.println(group);
         }
     }
 
     public static void createGroup() {
-        Scanner scanner = new Scanner(System.in);
+
         ManagerService.printAllManagers();
         System.out.println("Введите номер администратора:");
 

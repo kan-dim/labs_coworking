@@ -1,15 +1,12 @@
 package group;
 
 import excursion.Excursion;
-import excursion.ExcursionService;
 import manager.Manager;
 import client.ClientService;
-import manager.ManagerService;
-import service.checkInput;
+
 
 import java.util.ArrayList;
 import java.util.Scanner;
-import java.util.concurrent.ExecutorService;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -21,14 +18,14 @@ public class Group {
     private ArrayList<Integer> clientsIdList;
 
     public Group(Manager manager, Excursion excursion) {
-
         this.manager = manager;
         this.excursion = excursion;
-
     }
 
     public void addClientsToGroup() {
+
         clientsIdList = new ArrayList<>();
+
         int max = ClientService.getAmount();
 
         Scanner scanner = new Scanner(System.in);
@@ -55,7 +52,6 @@ public class Group {
         }
 
         System.out.println("*** Клиенты добавлены ***");
-
     }
 
     public String getAllClientsForGroup() {
@@ -67,12 +63,9 @@ public class Group {
     }
 
     @Override
-
     public String toString() {
         return ("\nМенеджер: " + manager +
                 "\n Экскурсия: " + excursion +
                 "\n Клиенты: " + getAllClientsForGroup());
     }
-
-
 }

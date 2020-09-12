@@ -4,12 +4,12 @@ public class Room {
     private final String name;
     private final String address;
 
-    private int startWorking;
-    private int finishWorking;
+    private final int startWorking;
+    private final int finishWorking;
 
-    private int pricePerOneHour;
+    private final int pricePerOneHour;
 
-    private int amountOfVisitors;
+    private final int amountOfVisitors;
 
 
     public Room(String name, String address,
@@ -20,22 +20,6 @@ public class Room {
         this.startWorking = startWorking;
         this.finishWorking = finishWorking;
         this.amountOfVisitors = amountOfVisitors;
-        this.pricePerOneHour = pricePerOneHour;
-    }
-
-    public void setStartWorking(int startWorking) {
-        this.startWorking = startWorking;
-    }
-
-    public void setFinishWorking(int finishWorking) {
-        this.finishWorking = finishWorking;
-    }
-
-    public void setAmountOfVisitors(int amountOfVisitors) {
-        this.amountOfVisitors = amountOfVisitors;
-    }
-
-    public void setPricePerOneHour(int pricePerOneHour) {
         this.pricePerOneHour = pricePerOneHour;
     }
 

@@ -3,6 +3,7 @@ package guide;
 import java.util.ArrayList;
 
 public class GuideService {
+
     private static final ArrayList<Guide> guidesList = new ArrayList<>();
 
     public static void addGuide(Guide guide) {
@@ -26,6 +27,10 @@ public class GuideService {
             }
         }
         return null;
+    }
+
+    public static int getAmount() {
+        return guidesList.size();
     }
 
     public static Guide getFirstFreeGuide() {
@@ -52,9 +57,4 @@ public class GuideService {
             System.out.println("Номер экскурсовода - " + i + ". " + guidesList.get(i));
         }
     }
-
-    public static int getAmount() {
-        return guidesList.size();
-    }
-
 }

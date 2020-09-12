@@ -19,9 +19,6 @@ public class Excursion {
 
 
     public Excursion() {
-
-        Scanner scanner = new Scanner(System.in);
-
         this.date = new Date();
 
         System.out.println("\n\tВведите длительность экскурсии: ");

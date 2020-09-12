@@ -46,14 +46,8 @@ public class Guide {
         return name;
     }
 
-    public boolean isKnowEnglish() {
-        return knowEnglish;
-    }
-
     public void toggleFreeState() {
-//        System.out.println(isFree);
         isFree = !this.isFree;
-//        System.out.println(isFree);
     }
 
     public String getId() {
