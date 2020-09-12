@@ -1,4 +1,4 @@
-package service;
+package client;
 
 import client.Client;
 import client.ClientType;
@@ -10,7 +10,6 @@ public class ClientService {
 
     public static void addClient(Client client) {
         clientsList.add(client);
-        System.out.println("Клиент добавлен в базу");
     }
 
     public static void removeClientById(int id) {
@@ -37,6 +36,11 @@ public class ClientService {
     }
 
     public static void printAllClients() {
+        if (clientsList.size() == 0) {
+            System.out.println("\nСписок клиентов пуст");
+            return;
+        }
+
         for (int i = 0; i < clientsList.size(); i++) {
             System.out.println("Номер клиента - " + i + ". " + clientsList.get(i));
         }

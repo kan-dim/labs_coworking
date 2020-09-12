@@ -1,11 +1,15 @@
 package group;
 
 import excursion.Excursion;
+import excursion.ExcursionService;
 import manager.Manager;
-import service.ClientService;
+import client.ClientService;
+import manager.ManagerService;
+import service.checkInput;
 
 import java.util.ArrayList;
 import java.util.Scanner;
+import java.util.concurrent.ExecutorService;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -24,6 +28,7 @@ public class Group {
     }
 
     public void addClientsToGroup() {
+        clientsIdList = new ArrayList<>();
         int max = ClientService.getAmount();
 
         Scanner scanner = new Scanner(System.in);
@@ -48,12 +53,15 @@ public class Group {
                 clientsIdList.add(id);
             }
         }
+
+        System.out.println("*** Клиенты добавлены ***");
+
     }
 
     public String getAllClientsForGroup() {
-        String clients = null;
+        String clients = "";
         for (int i = 0; i < clientsIdList.size(); i++) {
-            clients += clientsIdList.get(i).toString();
+            clients += ClientService.getClientById(i).toString();
         }
         return clients;
     }

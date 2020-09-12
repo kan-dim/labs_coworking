@@ -1,5 +1,8 @@
 package guide;
 
+import service.checkInput;
+
+import java.util.Scanner;
 import java.util.UUID;
 
 public class Guide {
@@ -9,6 +12,26 @@ public class Guide {
 
     private final String id;
 
+    public Guide() {
+
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("\n\tВведите имя экскурсовода: ");
+        this.name = scanner.nextLine();
+
+        System.out.println("\n\tЗнает английский? Да - 1, Нет - 0 :");
+        int english = checkInput.getNumber(1);
+
+        this.knowEnglish = (english == 1);
+        this.isFree = true;
+
+        this.id = UUID.randomUUID().toString();
+
+        GuideService.addGuide(this);
+
+        System.out.println("*** Экскурсовод добавлен ***");
+    }
+
     public Guide(String name, boolean knowEnglish) {
 
         this.name = name;
@@ -16,7 +39,6 @@ public class Guide {
         this.isFree = true;
 
         this.id = UUID.randomUUID().toString();
-
         GuideService.addGuide(this);
     }
 
@@ -29,7 +51,9 @@ public class Guide {
     }
 
     public void toggleFreeState() {
-        isFree = !isFree;
+//        System.out.println(isFree);
+        isFree = !this.isFree;
+//        System.out.println(isFree);
     }
 
     public String getId() {
@@ -43,6 +67,6 @@ public class Guide {
     @Override
     public String toString() {
         return ("\n\tИмя: " + name +
-                "\n\tАнглийский знает?: " + (knowEnglish ? "Да" : "Нет\n"));
+                "\n\tАнглийский знает?: " + (knowEnglish ? "Да" : "Нет") + "\n");
     }
 }

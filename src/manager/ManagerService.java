@@ -7,7 +7,6 @@ public class ManagerService {
 
     public static void addManager(Manager manager) {
         managersList.add(manager);
-        System.out.println("Администратор добавлен в базу");
     }
 
     public static void removeManagerById(int id) {
@@ -30,6 +29,11 @@ public class ManagerService {
     }
 
     public static void printAllManagers() {
+        if (managersList.size() == 0) {
+            System.out.println("\nСписок менеджеров пуст");
+            return;
+        }
+
         for (int i = 0; i < managersList.size(); i++) {
             System.out.println("Номер администратора - " + i + ". " + managersList.get(i));
         }

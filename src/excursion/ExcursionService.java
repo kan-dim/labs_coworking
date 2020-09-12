@@ -21,6 +21,12 @@ public class ExcursionService {
     }
 
     public static void printAllExcursion() {
+
+        if (excursionsList.size() == 0) {
+            System.out.println("\nСписок экскурсий пуст");
+            return;
+        }
+
         for (int i = 0; i < excursionsList.size(); i++) {
             System.out.println("Номер экскурсии - " + i + ". " + excursionsList.get(i));
         }

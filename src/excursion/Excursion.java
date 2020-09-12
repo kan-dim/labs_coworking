@@ -2,11 +2,9 @@ package excursion;
 
 import guide.Guide;
 import guide.GuideService;
+import service.checkInput;
 
-import java.util.Calendar;
-import java.util.Date;
-import java.util.GregorianCalendar;
-import java.util.UUID;
+import java.util.*;
 
 public class Excursion {
 
@@ -18,6 +16,29 @@ public class Excursion {
     private final String id;
 
     private final Guide guide;
+
+
+    public Excursion() {
+
+        Scanner scanner = new Scanner(System.in);
+
+        this.date = new Date();
+
+        System.out.println("\n\tВведите длительность экскурсии: ");
+        this.duration = checkInput.getNumber(180);
+
+        System.out.println("\n\tВведите количество клиентов: ");
+        this.visitors = checkInput.getNumber(20);
+
+        System.out.println(" Назначен первый свободный экскурсовод ");
+        this.guide = GuideService.getFirstFreeGuide();
+
+        this.id = UUID.randomUUID().toString();
+
+        ExcursionService.addExcursion(this);
+
+        System.out.println("*** Экскурсия создана ***");
+    }
 
     public Excursion(int duration, int visitors) {
 

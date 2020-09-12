@@ -7,7 +7,6 @@ public class GuideService {
 
     public static void addGuide(Guide guide) {
         guidesList.add(guide);
-        System.out.println("Экскурсовод добавлен в базу");
     }
 
     public static void removeGuideById(int id) {
@@ -36,6 +35,7 @@ public class GuideService {
                 guide.toggleFreeState();
 
                 return guide;
+
             }
         }
 
@@ -43,6 +43,11 @@ public class GuideService {
     }
 
     public static void printAllGuides() {
+        if (guidesList.size() == 0) {
+            System.out.println("\nСписок экскурсоводов пуст");
+            return;
+        }
+
         for (int i = 0; i < guidesList.size(); i++) {
             System.out.println("Номер экскурсовода - " + i + ". " + guidesList.get(i));
         }

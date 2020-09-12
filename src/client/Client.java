@@ -1,6 +1,5 @@
 package client;
 
-import service.ClientService;
 import service.checkInput;
 
 import java.util.Scanner;
@@ -12,13 +11,12 @@ public final class Client {
     private final ClientType clientType;
     private final Language language;
     private final String id;
-    private static int amount = 0;
 
     public Client() {
 
         Scanner scanner = new Scanner(System.in);
 
-        System.out.println("---Создание клиента---");
+        System.out.println("--- Создание клиента ---");
         System.out.println("Введите имя: ");
         this.name = scanner.nextLine();
 
@@ -36,6 +34,9 @@ public final class Client {
         this.id = UUID.randomUUID().toString();
 
         ClientService.addClient(this);
+
+
+        System.out.println("*** Клиент добавлен ***");
     }
 
     public Client(String name, ClientType clientType, Language language) {
@@ -56,9 +57,6 @@ public final class Client {
         return name;
     }
 
-    public static int getAmount() {
-        return amount;
-    }
 
     @Override
     public String toString() {

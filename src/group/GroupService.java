@@ -8,22 +8,30 @@ import service.checkInput;
 
 import java.util.ArrayList;
 import java.util.Scanner;
+import java.util.concurrent.ExecutorService;
 
 public class GroupService {
     private static final ArrayList<Group> groupsList = new ArrayList<>();
 
-    public void addGroup(Group group) {
+    public static void addGroup(Group group) {
         groupsList.add(group);
     }
 
-    public void printAllGroups() {
+    public static void printAllGroups() {
+
+        if (groupsList.size() == 0) {
+            System.out.println("Список групп пуст");
+            return;
+        }
+
         for (int i = 0; i < groupsList.size(); i++) {
             System.out.println(groupsList.get(i));
         }
     }
 
-    public void createGroup() {
+    public static void createGroup() {
         Scanner scanner = new Scanner(System.in);
+        ManagerService.printAllManagers();
         System.out.println("Введите номер администратора:");
 
         int managerId = checkInput.getNumber(ManagerService.getAmount());
@@ -32,8 +40,8 @@ public class GroupService {
         ManagerService.printAllManagers();
 
 
+        ExcursionService.printAllExcursion();
         System.out.println("Введите номер экскурсии:");
-
         int excursionId = checkInput.getNumber(ExcursionService.getAmount());
         Excursion excursion = ExcursionService.getExcursionById(excursionId);
 
@@ -41,6 +49,16 @@ public class GroupService {
 
         newGroup.addClientsToGroup();
 
-        System.out.println("Группа создана");
+        System.out.println("*** Группа создана ***");
+
+        GroupService.addGroup(newGroup);
+    }
+
+    public static int getAmount() {
+        return groupsList.size();
+    }
+
+    public static void removeGroupById(int id) {
+        groupsList.remove(id);
     }
 }

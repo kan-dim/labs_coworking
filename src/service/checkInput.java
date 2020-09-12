@@ -10,7 +10,6 @@ public class checkInput {
         int id;
 
         while (true) {
-            System.out.println("\tВведите нужное id:");
 
             if (!scanner.hasNextInt()) {
                 System.out.println("\tВведите число");
