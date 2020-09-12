@@ -1,4 +1,4 @@
-package people;
+package client;
 
 import service.ClientService;
 import service.checkInput;
@@ -62,8 +62,8 @@ public final class Client {
 
     @Override
     public String toString() {
-        return ("\nИмя клиента: " + name + "\nТип: " + clientType.toString() +
-                "\nЯзык: " + language.toString() + "\nID: " + id);
+        return ("\nИмя клиента: " + name + "\nТип: " + clientType +
+                "\nЯзык: " + language + "\nID: " + id);
     }
 
 }

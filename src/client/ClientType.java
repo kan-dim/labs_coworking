@@ -1,4 +1,4 @@
-package people;
+package client;
 
 public enum ClientType {
     FREELANCER("Фрилансер"),
@@ -18,7 +18,7 @@ public enum ClientType {
         ClientType[] clientTypes = ClientType.values();
         int id = 0;
         for (ClientType clientType : clientTypes) {
-            System.out.println(id + ". " + clientType.toString());
+            System.out.println(id + ". " + clientType);
             id++;
         }
     }

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4c374a45-eba7-433a-9be1-deb39a2258c7" name="Default Changelist" comment="initial commit" />
+    <list default="true" id="4c374a45-eba7-433a-9be1-deb39a2258c7" name="Default Changelist" comment="add client, ClientService" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -26,7 +26,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../lab1_dan/src" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="npm" />
   </component>
   <component name="RunManager">
@@ -40,13 +40,15 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
           <option name="containerStateName" value="" />
         </value>
       </option>
-      <option name="TEST_OBJECT" value="class" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -66,7 +68,8 @@
       <option name="presentableId" value="Default" />
       <updated>1599898249143</updated>
       <workItem from="1599898251439" duration="221000" />
-      <workItem from="1599898783482" duration="4618000" />
+      <workItem from="1599898783482" duration="5422000" />
+      <workItem from="1599908779394" duration="3198000" />
     </task>
     <servers />
   </component>
@@ -74,26 +77,38 @@
     <option name="version" value="3" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="574" y="128" key="#com.intellij.ide.util.MemberChooser" timestamp="1599911813540">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="574" y="128" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1599911813540" />
     <state x="549" y="167" key="FileChooserDialogImpl" timestamp="1599899008401">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="549" y="167" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1599899008401" />
-    <state width="1493" height="453" key="GridCell.Tab.0.bottom" timestamp="1599907182700">
+    <state width="1493" height="620" key="GridCell.Tab.0.bottom" timestamp="1599910788651">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="453" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1599907182700" />
-    <state width="1493" height="453" key="GridCell.Tab.0.center" timestamp="1599907182700">
+    <state width="1493" height="620" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1599910788651" />
+    <state width="1493" height="620" key="GridCell.Tab.0.center" timestamp="1599910788651">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="453" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1599907182700" />
-    <state width="1493" height="453" key="GridCell.Tab.0.left" timestamp="1599907182700">
+    <state width="1493" height="620" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1599910788651" />
+    <state width="1493" height="620" key="GridCell.Tab.0.left" timestamp="1599910788650">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="453" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1599907182700" />
-    <state width="1493" height="453" key="GridCell.Tab.0.right" timestamp="1599907182700">
+    <state width="1493" height="620" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1599910788650" />
+    <state width="1493" height="620" key="GridCell.Tab.0.right" timestamp="1599910788651">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="453" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1599907182700" />
+    <state width="1493" height="620" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1599910788651" />
+    <state x="479" y="0" width="577" height="824" key="find.popup" timestamp="1599909886864">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="479" y="0" width="577" height="824" key="find.popup/0.0.1536.824@0.0.1536.824" timestamp="1599909886864" />
+    <state x="425" y="187" key="run.anything.popup" timestamp="1599910108484">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="425" y="187" key="run.anything.popup/0.0.1536.824@0.0.1536.824" timestamp="1599910108484" />
     <state x="431" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1599905664153">
       <screen x="0" y="0" width="1536" height="824" />
     </state>

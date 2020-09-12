@@ -1,4 +1,4 @@
-package people;
+package client;
 
 public enum Language {
     UKRAINIAN("Украинский"),
@@ -21,7 +21,7 @@ public enum Language {
         Language[] languages = Language.values();
         int id = 0;
         for (Language language : languages) {
-            System.out.println(id + ". " + language.toString());
+            System.out.println(id + ". " + language);
             id++;
         }
     }

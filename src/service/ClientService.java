@@ -1,6 +1,6 @@
 package service;
 
-import people.Client;
+import client.Client;
 
 import java.util.ArrayList;
 
