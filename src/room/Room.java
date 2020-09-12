@@ -1,4 +1,4 @@
-package service;
+package room;
 
 public class Room {
     private final String name;

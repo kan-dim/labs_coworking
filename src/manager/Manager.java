@@ -1,6 +1,6 @@
 package manager;
 
-import service.checkInput;
+import validateData.checkInput;
 
 import java.util.Scanner;
 
@@ -15,10 +15,11 @@ public class Manager {
         this.name = scanner.nextLine();
 
         System.out.println("\n\tЗнает английский? Да - 1, Нет - 0 :");
-        int english = checkInput.getNumber(1);
+        int english = checkInput.getNumber(2);
 
         this.knowEnglish = (english == 1);
 
+        ManagerService.addManager(this);
         System.out.println("*** Администратор добавлен ***");
     }
 

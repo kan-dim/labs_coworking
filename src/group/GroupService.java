@@ -4,7 +4,7 @@ import excursion.Excursion;
 import excursion.ExcursionService;
 import manager.Manager;
 import manager.ManagerService;
-import service.checkInput;
+import validateData.checkInput;
 
 import java.util.ArrayList;
 

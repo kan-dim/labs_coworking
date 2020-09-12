@@ -1,6 +1,7 @@
 package client;
 
-import service.checkInput;
+
+import validateData.checkInput;
 
 import java.util.Scanner;
 import java.util.UUID;

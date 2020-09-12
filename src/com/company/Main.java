@@ -4,14 +4,9 @@ import client.Client;
 import client.ClientType;
 import client.Language;
 import excursion.Excursion;
-import excursion.ExcursionService;
-import group.GroupService;
 import guide.Guide;
-import guide.GuideService;
-import client.ClientService;
 import manager.Manager;
-import service.Room;
-import service.checkInput;
+import room.Room;
 
 public class Main {
 

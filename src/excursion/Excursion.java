@@ -2,7 +2,7 @@ package excursion;
 
 import guide.Guide;
 import guide.GuideService;
-import service.checkInput;
+import validateData.checkInput;
 
 import java.util.*;
 

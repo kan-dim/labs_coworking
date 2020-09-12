@@ -1,4 +1,4 @@
-package service;
+package validateData;
 
 import java.util.Scanner;
 

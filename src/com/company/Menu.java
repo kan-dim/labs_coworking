@@ -14,8 +14,8 @@ import guide.GuideService;
 import manager.Manager;
 import manager.ManagerService;
 
-import service.Room;
-import service.checkInput;
+import room.Room;
+import validateData.checkInput;
 
 public class Menu {
     public static int printMenu() {
