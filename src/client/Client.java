@@ -35,7 +35,6 @@ public final class Client {
 
         ClientService.addClient(this);
 
-
         System.out.println("*** Клиент добавлен ***");
     }
 
