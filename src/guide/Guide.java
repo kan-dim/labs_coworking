@@ -1,12 +1,13 @@
-package excursion;
+package guide;
+
+import java.util.UUID;
 
 public class Guide {
     private final String name;
     private final boolean knowEnglish;
     private boolean isFree;
 
-    private final int id;
-    private static int amount = 0;
+    private final String id;
 
     public Guide(String name, boolean knowEnglish) {
 
@@ -14,8 +15,7 @@ public class Guide {
         this.knowEnglish = knowEnglish;
         this.isFree = true;
 
-        this.id = amount;
-        amount++;
+        this.id = UUID.randomUUID().toString();
 
         GuideService.addGuide(this);
     }
@@ -32,7 +32,7 @@ public class Guide {
         isFree = !isFree;
     }
 
-    public int getId() {
+    public String getId() {
         return id;
     }
 
@@ -42,7 +42,7 @@ public class Guide {
 
     @Override
     public String toString() {
-        return ("\nИмя экскурсовода: " + name +
-                "\nАнглийский знает?: " + (knowEnglish ? "Да" : "Нет"));
+        return ("\n\tИмя: " + name +
+                "\n\tАнглийский знает?: " + (knowEnglish ? "Да" : "Нет\n"));
     }
 }

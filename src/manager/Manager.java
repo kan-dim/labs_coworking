@@ -1,4 +1,4 @@
-package people;
+package manager;
 
 public class Manager {
     private final String name;
@@ -15,5 +15,12 @@ public class Manager {
 
     public boolean isKnowEnglish() {
         return knowEnglish;
+    }
+
+    @Override
+
+    public String toString() {
+        return ("\n\tИмя: " + name +
+                "\n\tАнглийский знает?: " + (knowEnglish ? "Да" : "Нет\n"));
     }
 }

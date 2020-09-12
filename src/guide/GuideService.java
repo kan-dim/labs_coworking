@@ -1,6 +1,4 @@
-package excursion;
-
-import client.Client;
+package guide;
 
 import java.util.ArrayList;
 
@@ -13,26 +11,11 @@ public class GuideService {
     }
 
     public static void removeGuideById(int id) {
-        for (Guide guide : guidesList) {
-
-            if (guide.getId() == id) {
-                guidesList.remove(guide);
-                System.out.println("Клиент удален");
-
-                return;
-            }
-        }
+        guidesList.remove(id);
     }
 
     public static Guide getGuideById(int id) {
-        for (Guide guide : guidesList) {
-
-            if (guide.getId() == id) {
-                return guide;
-            }
-        }
-
-        return null;
+        return guidesList.get(id);
     }
 
 
@@ -57,6 +40,16 @@ public class GuideService {
         }
 
         return null;
+    }
+
+    public static void printAllGuides() {
+        for (int i = 0; i < guidesList.size(); i++) {
+            System.out.println("Номер экскурсовода - " + i + ". " + guidesList.get(i));
+        }
+    }
+
+    public static int getAmount() {
+        return guidesList.size();
     }
 
 }

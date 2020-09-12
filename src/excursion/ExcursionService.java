@@ -9,31 +9,24 @@ public class ExcursionService {
 
     public static void addExcursion(Excursion excursion) {
         excursionsList.add(excursion);
-        System.out.println("Экскурсия добавлена в базу");
+//        System.out.println("Экскурсия добавлена в базу");
     }
 
     public static void removeExcursionById(int id) {
-        for (Excursion excursion : excursionsList) {
-
-            if (excursion.getId() == id) {
-                excursionsList.remove(excursion);
-                System.out.println("Экскурсия удалена");
-
-                return;
-            }
-        }
+        excursionsList.remove(id);
     }
 
     public static Excursion getExcursionById(int id) {
-        for (Excursion excursion : excursionsList) {
-
-            if (excursion.getId() == id) {
-                return excursion;
-            }
-        }
-
-        return null;
+        return excursionsList.get(id);
     }
 
+    public static void printAllExcursion() {
+        for (int i = 0; i < excursionsList.size(); i++) {
+            System.out.println("Номер экскурсии - " + i + ". " + excursionsList.get(i));
+        }
+    }
 
+    public static int getAmount() {
+        return excursionsList.size();
+    }
 }

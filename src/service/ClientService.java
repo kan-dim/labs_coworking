@@ -1,6 +1,7 @@
 package service;
 
 import client.Client;
+import client.ClientType;
 
 import java.util.ArrayList;
 
@@ -13,26 +14,11 @@ public class ClientService {
     }
 
     public static void removeClientById(int id) {
-        for (Client client : clientsList) {
-
-            if (client.getId() == id) {
-                clientsList.remove(client);
-                System.out.println("Клиент удален");
-
-                return;
-            }
-        }
+        clientsList.remove(id);
     }
 
     public static Client getClientById(int id) {
-        for (Client client : clientsList) {
-
-            if (client.getId() == id) {
-                return client;
-            }
-        }
-
-        return null;
+        return clientsList.get(id);
     }
 
 
@@ -44,6 +30,16 @@ public class ClientService {
             }
         }
         return null;
+    }
+
+    public static int getAmount() {
+        return clientsList.size();
+    }
+
+    public static void printAllClients() {
+        for (int i = 0; i < clientsList.size(); i++) {
+            System.out.println("Номер клиента - " + i + ". " + clientsList.get(i));
+        }
     }
 
 }

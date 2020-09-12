@@ -4,13 +4,14 @@ import service.ClientService;
 import service.checkInput;
 
 import java.util.Scanner;
+import java.util.UUID;
 
 public final class Client {
 
     private final String name;
     private final ClientType clientType;
     private final Language language;
-    private final int id;
+    private final String id;
     private static int amount = 0;
 
     public Client() {
@@ -32,8 +33,7 @@ public final class Client {
         this.language = Language.getLanguageById(languageId);
 
 
-        this.id = amount;
-        amount++;
+        this.id = UUID.randomUUID().toString();
 
         ClientService.addClient(this);
     }
@@ -43,12 +43,12 @@ public final class Client {
         this.name = name;
         this.clientType = clientType;
         this.language = language;
-        this.id = amount;
-        amount++;
+        this.id = UUID.randomUUID().toString();
 
+        ClientService.addClient(this);
     }
 
-    public int getId() {
+    public String getId() {
         return id;
     }
 
@@ -62,8 +62,8 @@ public final class Client {
 
     @Override
     public String toString() {
-        return ("\nИмя клиента: " + name + "\nТип: " + clientType +
-                "\nЯзык: " + language + "\nID: " + id);
+        return ("\n\tИмя клиента: " + name + "\n\tТип: " + clientType +
+                "\n\tЯзык: " + language + "\n\tID: " + id + "\n");
     }
 
 }

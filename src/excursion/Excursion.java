@@ -1,8 +1,12 @@
 package excursion;
 
+import guide.Guide;
+import guide.GuideService;
+
 import java.util.Calendar;
 import java.util.Date;
 import java.util.GregorianCalendar;
+import java.util.UUID;
 
 public class Excursion {
 
@@ -11,8 +15,7 @@ public class Excursion {
     private final int duration;
     private final int visitors;
 
-    private final int id;
-    private static int amount = 0;
+    private final String id;
 
     private final Guide guide;
 
@@ -25,8 +28,7 @@ public class Excursion {
 
         guide = GuideService.getFirstFreeGuide();
 
-        this.id = amount;
-        amount++;
+        this.id = UUID.randomUUID().toString();
 
         ExcursionService.addExcursion(this);
     }
@@ -41,21 +43,20 @@ public class Excursion {
 
         guide = GuideService.getFirstFreeGuide();
 
-        this.id = amount;
-        amount++;
+        this.id = UUID.randomUUID().toString();
 
         ExcursionService.addExcursion(this);
     }
 
-    public int getId() {
+    public String getId() {
         return id;
     }
 
     @Override
     public String toString() {
-        return ("\nНомер экскурсии: " + id + "\nДлительность: " + duration +
-                "\nКоличество посетителей: " + visitors +
-                "\nДата проведения: " + date +
-                "Экскурсовод: " + guide);
+        return ("\t\nИдентификатор экскурсии: " + id + "\n\tДлительность: " + duration +
+                "\n\tКоличество посетителей: " + visitors +
+                "\n\tДата проведения: " + date +
+                "\n\t\tЭкскурсовод: " + guide + "\n");
     }
 }
