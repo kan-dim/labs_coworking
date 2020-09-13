@@ -3,23 +3,29 @@ package client;
 import java.util.ArrayList;
 
 public class ClientService {
-    private static final ArrayList<Client> clientsList = new ArrayList<>();
+    private  final ArrayList<Client> clientsList;
 
-    public static void addClient(Client client) {
+    public ClientService() {
+        clientsList = new ArrayList<>();
+    }
+
+    public  void addClient(Client client) {
         clientsList.add(client);
     }
 
-    public static void removeClientById(int id) {
+    public  void removeClientById(int id) {
         clientsList.remove(id);
     }
 
-    public static Client getClientById(int id) {
+    public  Client getClientById(int id) {
         return clientsList.get(id);
     }
 
-    public static int getAmount() { return clientsList.size(); }
+    public  int getAmount() {
+        return clientsList.size();
+    }
 
-    public static Client getClientByName(String name) {
+    public  Client getClientByName(String name) {
         for (Client client : clientsList) {
 
             if (client.getName().equals(name)) {
@@ -29,7 +35,7 @@ public class ClientService {
         return null;
     }
 
-    public static void printAllClients() {
+    public  void printAllClients() {
 
         if (clientsList.size() == 0) {
             System.out.println("\nСписок клиентов пуст");

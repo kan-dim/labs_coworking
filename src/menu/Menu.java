@@ -1,4 +1,4 @@
-package com.company;
+package menu;
 
 import client.Client;
 import client.ClientService;
@@ -51,7 +51,12 @@ public class Menu {
         return checkInput.getNumber(18);
     }
 
-    public static void doUserChoice(Room room) {
+    public void createMenu(Room room,
+                           ClientService ClientService,
+                           ManagerService ManagerService,
+                           GuideService GuideService,
+                           ExcursionService ExcursionService,
+                           GroupService GroupService) {
 
         int userChoice = -1;
 
@@ -66,7 +71,7 @@ public class Menu {
                     break;
 
                 case 2:
-                    new Client();
+                    new Client(ClientService);
                     break;
 
                 case 3:
@@ -81,7 +86,7 @@ public class Menu {
 
 
                 case 5:
-                    new Manager();
+                    new Manager(ManagerService);
                     break;
 
                 case 6:
@@ -95,7 +100,7 @@ public class Menu {
                     break;
 
                 case 8:
-                    new Guide();
+                    new Guide(GuideService);
                     break;
 
                 case 9:
@@ -109,7 +114,7 @@ public class Menu {
                     break;
 
                 case 11:
-                    new Excursion();
+                    new Excursion(ExcursionService, GuideService);
                     break;
 
                 case 12:
@@ -123,7 +128,7 @@ public class Menu {
                     break;
 
                 case 14:
-                    GroupService.createGroup();
+                    GroupService.createGroup(ExcursionService, ManagerService, ClientService);
                     break;
 
                 case 15:

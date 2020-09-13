@@ -13,7 +13,7 @@ public final class Client {
     private final Language language;
     private final String id;
 
-    public Client() {
+    public Client(ClientService ClientService) {
 
         Scanner scanner = new Scanner(System.in);
 
@@ -39,7 +39,7 @@ public final class Client {
         System.out.println("*** Клиент добавлен ***");
     }
 
-    public Client(String name, ClientType clientType, Language language) {
+    public Client(String name, ClientType clientType, Language language, ClientService ClientService) {
 
         this.name = name;
         this.clientType = clientType;

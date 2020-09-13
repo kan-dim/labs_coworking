@@ -4,21 +4,25 @@ import java.util.ArrayList;
 
 public class ExcursionService {
 
-    private static final ArrayList<Excursion> excursionsList = new ArrayList<>();
+    public ExcursionService() {
+        excursionsList = new ArrayList<>();
+    }
 
-    public static void addExcursion(Excursion excursion) {
+    private final ArrayList<Excursion> excursionsList;
+
+    public  void addExcursion(Excursion excursion) {
         excursionsList.add(excursion);
     }
 
-    public static void removeExcursionById(int id) {
+    public  void removeExcursionById(int id) {
         excursionsList.remove(id);
     }
 
-    public static Excursion getExcursionById(int id) {
+    public  Excursion getExcursionById(int id) {
         return excursionsList.get(id);
     }
 
-    public static void printAllExcursion() {
+    public  void printAllExcursion() {
 
         if (excursionsList.size() == 0) {
             System.out.println("\nСписок экскурсий пуст");
@@ -30,7 +34,7 @@ public class ExcursionService {
         }
     }
 
-    public static int getAmount() {
+    public  int getAmount() {
         return excursionsList.size();
     }
 }

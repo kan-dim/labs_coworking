@@ -3,22 +3,26 @@ package manager;
 import java.util.ArrayList;
 
 public class ManagerService {
-    private static final ArrayList<Manager> managersList = new ArrayList<>();
+    private final ArrayList<Manager> managersList;
 
-    public static void addManager(Manager manager) {
+    public ManagerService() {
+        managersList = new ArrayList<>();
+    }
+
+    public void addManager(Manager manager) {
         managersList.add(manager);
     }
 
-    public static void removeManagerById(int id) {
+    public void removeManagerById(int id) {
         managersList.remove(id);
     }
 
-    public static Manager getManagerById(int id) {
+    public Manager getManagerById(int id) {
         return managersList.get(id);
     }
 
 
-    public static Manager getManagerByName(String name) {
+    public Manager getManagerByName(String name) {
         for (Manager manager : managersList) {
 
             if (manager.getName().equals(name)) {
@@ -28,7 +32,7 @@ public class ManagerService {
         return null;
     }
 
-    public static void printAllManagers() {
+    public void printAllManagers() {
         if (managersList.size() == 0) {
             System.out.println("\nСписок менеджеров пуст");
             return;
@@ -39,7 +43,7 @@ public class ManagerService {
         }
     }
 
-    public static int getAmount() {
+    public int getAmount() {
         return managersList.size();
     }
 

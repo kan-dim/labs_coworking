@@ -3,23 +3,27 @@ package guide;
 import java.util.ArrayList;
 
 public class GuideService {
+    private final ArrayList<Guide> guidesList;
 
-    private static final ArrayList<Guide> guidesList = new ArrayList<>();
+    public GuideService() {
+        guidesList = new ArrayList<>();
+    }
 
-    public static void addGuide(Guide guide) {
+
+    public void addGuide(Guide guide) {
         guidesList.add(guide);
     }
 
-    public static void removeGuideById(int id) {
+    public void removeGuideById(int id) {
         guidesList.remove(id);
     }
 
-    public static Guide getGuideById(int id) {
+    public Guide getGuideById(int id) {
         return guidesList.get(id);
     }
 
 
-    public static Guide getClientByName(String name) {
+    public Guide getClientByName(String name) {
         for (Guide guide : guidesList) {
 
             if (guide.getName().equals(name)) {
@@ -29,11 +33,11 @@ public class GuideService {
         return null;
     }
 
-    public static int getAmount() {
+    public int getAmount() {
         return guidesList.size();
     }
 
-    public static Guide getFirstFreeGuide() {
+    public  Guide getFirstFreeGuide() {
         for (Guide guide : guidesList) {
 
             if (guide.isFree()) {
@@ -47,7 +51,7 @@ public class GuideService {
         return null;
     }
 
-    public static void printAllGuides() {
+    public void printAllGuides() {
         if (guidesList.size() == 0) {
             System.out.println("\nСписок экскурсоводов пуст");
             return;

@@ -1,5 +1,6 @@
 package group;
 
+import client.ClientService;
 import excursion.Excursion;
 import excursion.ExcursionService;
 import manager.Manager;
@@ -9,14 +10,18 @@ import validateData.checkInput;
 import java.util.ArrayList;
 
 public class GroupService {
+    private final ArrayList<Group> groupsList;
 
-    private static final ArrayList<Group> groupsList = new ArrayList<>();
+    public GroupService() {
+        groupsList = new ArrayList<>();
+    }
 
-    public static void addGroup(Group group) {
+
+    public void addGroup(Group group) {
         groupsList.add(group);
     }
 
-    public static void printAllGroups() {
+    public void printAllGroups() {
 
         if (groupsList.size() == 0) {
             System.out.println("Список групп пуст");
@@ -28,7 +33,7 @@ public class GroupService {
         }
     }
 
-    public static void createGroup() {
+    public void createGroup(ExcursionService ExcursionService, ManagerService ManagerService, ClientService ClientService) {
 
         ManagerService.printAllManagers();
         System.out.println("Введите номер администратора:");
@@ -46,18 +51,18 @@ public class GroupService {
 
         Group newGroup = new Group(manager, excursion);
 
-        newGroup.addClientsToGroup();
+        newGroup.addClientsToGroup(ClientService);
 
         System.out.println("*** Группа создана ***");
 
-        GroupService.addGroup(newGroup);
+        groupsList.add(newGroup);
     }
 
-    public static int getAmount() {
+    public int getAmount() {
         return groupsList.size();
     }
 
-    public static void removeGroupById(int id) {
+    public void removeGroupById(int id) {
         groupsList.remove(id);
     }
 }

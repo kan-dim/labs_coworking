@@ -8,7 +8,7 @@ public class Manager {
     private final String name;
     private final boolean knowEnglish;
 
-    public Manager() {
+    public Manager(ManagerService ManagerService) {
         Scanner scanner = new Scanner(System.in);
 
         System.out.println("\n\tВведите имя администратора");
@@ -23,7 +23,7 @@ public class Manager {
         System.out.println("*** Администратор добавлен ***");
     }
 
-    public Manager(String name, boolean knowEnglish) {
+    public Manager(String name, boolean knowEnglish, ManagerService ManagerService) {
         this.name = name;
         this.knowEnglish = knowEnglish;
 

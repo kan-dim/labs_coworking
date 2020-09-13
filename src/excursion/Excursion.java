@@ -18,7 +18,7 @@ public class Excursion {
     private final Guide guide;
 
 
-    public Excursion() {
+    public Excursion(ExcursionService ExcursionService, GuideService GuideService) {
         this.date = new Date();
 
         System.out.println("\n\tВведите длительность экскурсии: ");
@@ -37,23 +37,9 @@ public class Excursion {
         System.out.println("*** Экскурсия создана ***");
     }
 
-    public Excursion(int duration, int visitors) {
+    public Excursion(int day, int duration, int visitors, ExcursionService ExcursionService, GuideService GuideService) {
 
-
-        this.date = new Date();
-        this.duration = duration;
-        this.visitors = visitors;
-
-        guide = GuideService.getFirstFreeGuide();
-
-        this.id = UUID.randomUUID().toString();
-
-        ExcursionService.addExcursion(this);
-    }
-
-    public Excursion(int day, int month, int year, int duration, int visitors) {
-
-        Calendar calendar = new GregorianCalendar(year, month - 1, day);
+        Calendar calendar = new GregorianCalendar(2020, 8, day);
         this.date = calendar.getTime();
 
         this.duration = duration;

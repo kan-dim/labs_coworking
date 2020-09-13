@@ -12,7 +12,7 @@ public class Guide {
 
     private final String id;
 
-    public Guide() {
+    public Guide(GuideService GuideService) {
 
         Scanner scanner = new Scanner(System.in);
 
@@ -32,7 +32,7 @@ public class Guide {
         System.out.println("*** Экскурсовод добавлен ***");
     }
 
-    public Guide(String name, boolean knowEnglish) {
+    public Guide(String name, boolean knowEnglish, GuideService GuideService) {
 
         this.name = name;
         this.knowEnglish = knowEnglish;

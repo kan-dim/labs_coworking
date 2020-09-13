@@ -22,7 +22,7 @@ public class Group {
         this.excursion = excursion;
     }
 
-    public void addClientsToGroup() {
+    public void addClientsToGroup(ClientService ClientService) {
 
         clientsIdList = new ArrayList<>();
 
@@ -54,7 +54,7 @@ public class Group {
         System.out.println("*** Клиенты добавлены ***");
     }
 
-    public String getAllClientsForGroup() {
+    public String getAllClientsForGroup(ClientService ClientService) {
         String clients = "";
         for (int i = 0; i < clientsIdList.size(); i++) {
             clients += ClientService.getClientById(i).toString();
@@ -66,6 +66,6 @@ public class Group {
     public String toString() {
         return ("\nМенеджер: " + manager +
                 "\n Экскурсия: " + excursion +
-                "\n Клиенты: " + getAllClientsForGroup());
+                "\n Номера клиентов: " + clientsIdList);
     }
 }
